@@ -1,5 +1,11 @@
 package com.cipher;public class Rot13Cipher {
 public class Rot13Cipher implements Cipher {
+    private HashMap<Character, Character> map;
+
+    public Rot13Cipher(){
+        map = new HashMap<>();
+    }
+
     @Override
     public boolean isCipherAvailable() {
         return false;
