@@ -1,4 +1,8 @@
-package com.cipher;public class Rot13Cipher {
+package com.cipher;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class Rot13Cipher implements Cipher {
     private HashMap<Character, Character> map;
 
