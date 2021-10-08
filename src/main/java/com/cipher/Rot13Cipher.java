@@ -4,6 +4,7 @@ public class Rot13Cipher implements Cipher {
 
     public Rot13Cipher(){
         map = new HashMap<>();
+        initializeMap();
     }
 
     @Override
