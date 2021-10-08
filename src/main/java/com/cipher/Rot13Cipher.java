@@ -1,5 +1,22 @@
 package com.cipher;public class Rot13Cipher {
     /**
+     * Encrypt string
+     * When a string is provided the function returns the encrypted version
+     * @param text provided string
+     * @return encrypted string
+     */
+    public String encrypt(String text) {
+        String encrypted = "";
+       for(int i = 0; i < text.length(); i++){
+           if(Character.isLetter(text.charAt(i)))
+               encrypted += String.valueOf(encryptLetter(text.toLowerCase().charAt(i)));
+           else
+               encrypted += text.charAt(i);
+       }
+       return encrypted;
+    }
+
+    /**
      * Decrypt string
      * When an encrypted text is provided the function returns the decrypted string
      * @param text encrypted string
