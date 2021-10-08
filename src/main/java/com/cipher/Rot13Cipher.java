@@ -1,4 +1,15 @@
 package com.cipher;public class Rot13Cipher {
+public class Rot13Cipher implements Cipher {
+    @Override
+    public boolean isCipherAvailable() {
+        return false;
+    }
+
+    @Override
+    public Cipher getCipherArgs() {
+        return null;
+    }
+
     /**
      * Encrypt each letter to rot13 alphabet
      * When an alphabet letter is provided the function returns map value based on key
