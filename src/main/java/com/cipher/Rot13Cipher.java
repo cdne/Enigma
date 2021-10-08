@@ -1,5 +1,20 @@
 package com.cipher;public class Rot13Cipher {
     /**
+     * Decrypt encrypted letter to alphabet letter
+     * When the encrypted character is provided function returns the key based on value
+     * @param character each character from a string
+     * @return decrypted character
+     */
+    private char decryptLetter(char character) {
+        for(Map.Entry<Character, Character> entry : map.entrySet()){
+            if(character == entry.getValue()) {
+                return entry.getKey();
+            }
+        }
+        return ' ';
+    }
+
+    /**
      * Encrypt string
      * When a string is provided the function returns the encrypted version
      * @param text provided string
