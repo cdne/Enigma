@@ -11,6 +11,32 @@ public class MorseCode implements Cipher{
         return null;
     }
     /**
+     * Decode the morse code text in human readable text
+     * @param text provided string
+     * @return decrypted text from morse code to uppercase words
+     */
+    public String decode(String text) {
+        String[] textArray = text.split("\\s+");
+        String decrypted = "";
+        boolean characterIsFound = false;
+
+        for(int i = 0; i < textArray.length;i++) {
+            characterIsFound = false;
+            for(Map.Entry<Character, String> entry : morseCodeMap.entrySet()){
+                if(textArray[i].equalsIgnoreCase(entry.getValue())) {
+                    decrypted += entry.getKey();
+                }
+                else if(textArray[i].equals("/") && !characterIsFound){
+                    decrypted += " ";
+                    characterIsFound = true;
+                }
+            }
+        }
+
+        return decrypted;
+    }
+
+    /**
      * For each letter and number add the morse code equivalent
      */
     private void initializeMorseCodeMap(){
