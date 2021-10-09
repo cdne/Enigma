@@ -10,6 +10,24 @@ public class MorseCode implements Cipher{
     public Cipher getCipherArgs() {
         return null;
     }
+
+    /**
+     * Encode the text in morse code
+     * @param text provided code to encode in morse code
+     * @return text in morse code
+     */
+    public String encode(String text) {
+        String encrypted = "";
+        for(int i = 0; i < text.length(); i++){
+            if(Character.isLetter(text.charAt(i)))
+                encrypted += morseCodeMap.get((text.toUpperCase().charAt(i))) + " ";
+            else if(text.charAt(i) == ' ')
+                encrypted += "/ ";
+
+        }
+        return encrypted;
+    }
+
     /**
      * Decode the morse code text in human readable text
      * @param text provided string
@@ -77,4 +95,5 @@ public class MorseCode implements Cipher{
         morseCodeMap.put('9', "----.");
         morseCodeMap.put('0', "-----");
     }
+
 }
