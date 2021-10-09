@@ -1,6 +1,16 @@
 package com.cipher;
 
-public class MorseCode implements Cipher{
+import java.util.HashMap;
+import java.util.Map;
+
+public class MorseCode implements Cipher {
+    private HashMap<Character, String> morseCodeMap;
+
+    public MorseCode() {
+        this.morseCodeMap = new HashMap<>();
+        initializeMorseCodeMap();
+      }
+
     @Override
     public boolean isCipherAvailable() {
         return false;
