@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Rot13Cipher implements Cipher {
-    private HashMap<Character, Character> map;
+    private Map<Character, Character> map;
 
     public Rot13Cipher(){
         map = new HashMap<>();

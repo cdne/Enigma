@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MorseCode implements Cipher {
-    private HashMap<Character, String> morseCodeMap;
+    private Map<Character, String> morseCodeMap;
 
     public MorseCode() {
         this.morseCodeMap = new HashMap<>();
